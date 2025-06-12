@@ -91,3 +91,24 @@
                 this.reset();
             });
         }
+  // Show popup
+  document.querySelectorAll('img[data-popup]').forEach(img => {
+    img.addEventListener('click', () => {
+      const imageUrl = img.getAttribute('data-popup');
+      document.getElementById('popupImage').src = imageUrl;
+      document.getElementById('popupOverlay').style.display = 'flex';
+    });
+  });
+
+  // Hide popup
+  function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
+    document.getElementById('popupImage').src = '';
+  }
+
+  // Optional: Close popup on background click
+  document.getElementById('popupOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closePopup();
+    }
+  });

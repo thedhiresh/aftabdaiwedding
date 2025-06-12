@@ -533,3 +533,14 @@
                 padding: 30px 20px;
             }
         }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.gallery-item img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
